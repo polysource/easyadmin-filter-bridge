@@ -155,6 +155,7 @@ final class SavedViewController
             ownerId: $user->getUserIdentifier(),
             scope: $scope,
             filters: new FilterCollection($resource, $criteria),
+            columns: (array_key_exists('columns', $request->request->all() )) ? $request->request->all()['columns'] : [],
             teamId: $teamId,
         );
 
